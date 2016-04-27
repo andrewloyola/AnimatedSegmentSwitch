@@ -13,6 +13,7 @@ import UIKit
 @IBDesignable public class AnimatedSegmentSwitch: UIControl {
 
     // MARK: - Public Properties
+    public var panEnabled = true
 
     public var items: [String] = ["Item 1", "Item 2", "Item 3"] {
         didSet {
@@ -147,6 +148,10 @@ import UIKit
     }
 
     func pan(gesture: UIPanGestureRecognizer!) {
+        if !panEnabled {
+            return
+        }
+        
         if gesture.state == .Began {
             selectedThumbViewFrame = thumbView.frame
         } else if gesture.state == .Changed {
