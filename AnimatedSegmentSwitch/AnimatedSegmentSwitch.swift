@@ -126,7 +126,7 @@ import UIKit
         selectedTitleLabelsContentView.isUserInteractionEnabled = false
         thumbViewMask.isUserInteractionEnabled = false
 
-        panGesture = UIPanGestureRecognizer(target: self, action: #selector(AnimatedSegmentSwitch.pan(_:)))
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(AnimatedSegmentSwitch.pan(gesture:)))
         panGesture.delegate = self
         addGestureRecognizer(panGesture)
     }
